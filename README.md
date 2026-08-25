@@ -205,7 +205,7 @@ ADDCOLUMNS(
     "Day", DAY([Date]),
     "Day Name", FORMAT([Date], "dddd")
 )
-
+```
 # 🧹 Data Preparation & Power Query
 
 The data was prepared and transformed using **Power Query** before creating the Power BI dashboard.
@@ -639,9 +639,6 @@ Sales-Performance-Analysis
 │   ├── Customer_Analysis.png
 │   └── Time_Sales_Trend.png
 │
-├── SQL
-│   └── Sales_Analysis_Project.sql
-│
 └── README.md
 ```
 
@@ -655,27 +652,27 @@ The project includes screenshots of the completed Power BI dashboard pages.
 
 ### Executive Sales Overview
 
-![Executive Sales Overview](Screenshots/Executive_Sales_Overview.png)
+![Executive Sales Overview](Screenshots/Screenshot 2026-08-25 184543.png)
 
 ### Product Analysis
 
-![Product Analysis](Screenshots/Product_Analysis.png)
+![Product Analysis](Screenshots/Screenshot 2026-08-25 184610.png)
 
 ### Category Analysis
 
-![Category Analysis](Screenshots/Category_Analysis.png)
+![Category Analysis](Screenshots/Screenshot 2026-08-25 184629.png)
 
 ### Salesperson Analysis
 
-![Salesperson Analysis](Screenshots/Salesperson_Analysis.png)
+![Salesperson Analysis](Screenshots/Screenshot 2026-08-25 184648.png)
 
 ### Customer Analysis
 
-![Customer Analysis](Screenshots/Customer_Analysis.png)
+![Customer Analysis](Screenshots/Screenshot 2026-08-25 184704.png)
 
 ### Time & Sales Trend
 
-![Time & Sales Trend](Screenshots/Time_Sales_Trend.png)
+![Time & Sales Trend](Screenshots/Screenshot 2026-08-25 184727.png)
 
 > The screenshot files should be added to the `Screenshots` folder before publishing the README on GitHub.
 
