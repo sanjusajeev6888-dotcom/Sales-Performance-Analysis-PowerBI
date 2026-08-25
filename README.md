@@ -2,170 +2,151 @@
 
 ## 📌 Project Overview
 
-This project presents an interactive **Sales Performance Analysis Dashboard** built using Microsoft Power BI.
+This project presents an interactive **Sales Performance Analysis Dashboard** built using **Microsoft Power BI**.
 
-The dashboard analyzes sales data across products, categories, salespersons, customers, and time periods to identify key business trends and performance indicators.
+The dashboard analyzes sales data across products, categories, salespersons, customers, regions, and time periods to identify important business trends, measure performance, and support data-driven decision-making.
+
+The project demonstrates the complete Power BI workflow, including:
+
+- Data loading
+- Data cleaning and transformation
+- Data modeling
+- Relationship creation
+- Date table creation
+- DAX calculations
+- KPI development
+- Interactive dashboards
+- Slicers and filters
+- Business insights
+- Data visualization
+
 
 ---
 
-## 🎯 Business Objectives
+# 🎯 Business Objectives
+
+The main objectives of this project are:
 
 - Analyze overall sales performance
-- Identify top-performing products
-- Analyze category-wise sales and quantity
-- Evaluate salesperson performance
+- Track total sales and total orders
 - Analyze customer purchasing behavior
-- Track monthly and yearly sales trends
-- Measure sales growth
-- Create an interactive and professional Power BI dashboard
+- Identify top-performing products
+- Identify top-performing categories
+- Evaluate salesperson performance
+- Analyze regional sales performance
+- Analyze monthly sales trends
+- Analyze sales quantity
+- Calculate average order value
+- Calculate salesperson contribution to total sales
+- Identify important business trends
+- Provide an interactive dashboard for business decision-making
+
 
 ---
 
-## 🗂️ Dataset
+# 🗂️ Dataset
 
-The project uses the same sales dataset used in the SQL and Excel analysis projects.
+The project uses a relational sales dataset consisting of the following tables:
 
-The dataset contains five related tables:
+### 1. Customers
 
-- **Customers** – Customer information and customer segments
-- **Products** – Product details and unit prices
-- **Categories** – Product category information
-- **Salespersons** – Salesperson details including region and experience
-- **Orders** – Transaction-level sales information
+Contains customer-related information.
 
-### Key fields include:
+Important fields include:
 
-- Order ID
-- Order Date
-- Customer ID
-- Product ID
-- Salesperson ID
-- Quantity
-- Unit Price
-- Discount Percentage
-- Sales Amount
+- CustomerID
+- CustomerName
+- Region
+- Other customer attributes
+
+
+### 2. Products
+
+Contains product information.
+
+Important fields include:
+
+- ProductID
+- ProductName
+- CategoryID
+- UnitPrice
+
+
+### 3. Categories
+
+Contains product category information.
+
+Important fields include:
+
+- CategoryID
+- CategoryName
+
+
+### 4. Salespersons
+
+Contains salesperson information.
+
+Important fields include:
+
+- SalespersonID
+- SalespersonName
 - Region
 
----
 
-## 🛠️ Tools & Technologies
+### 5. Orders
 
-- Microsoft Power BI
-- Power Query
-- DAX
-- Data Modeling
-- Interactive Visualizations
-- Slicers
-- KPI Cards
+Contains transactional sales information.
 
----
+Important fields include:
 
-## 📊 Dashboard Pages
+- OrderID
+- OrderDate
+- CustomerID
+- ProductID
+- SalespersonID
+- Quantity
+- UnitPrice
+- SalesAmount
 
-### 1. Executive Sales Overview
 
-Provides a high-level summary of overall business performance using:
+### 6. Date Table
 
-- Total Orders
-- Total Sales
-- Total Customers
-- Average Order Value
-- Top Products
-- Monthly Sales Trend
-- Sales by Category
+A dedicated Date Table was created in Power BI using DAX for accurate time-based analysis.
 
-### 2. Product Analysis
+The Date Table contains:
 
-Analyzes:
+- Date
+- Year
+- Month
+- Month Number
+- Month-Year
+- Quarter
+- Day
+- Day Name
 
-- Top Products by Sales
-- Product Sales
-- Product Quantity
-- Product Orders
-- Product-level performance
-
-### 3. Category Analysis
-
-Analyzes:
-
-- Category Sales
-- Category Quantity
-- Category Orders
-- Category-wise sales contribution
-
-### 4. Salesperson Analysis
-
-Analyzes:
-
-- Salesperson Sales
-- Salesperson Orders
-- Total Quantity
-- Average Order Value
-- Salesperson Sales Percentage
-
-### 5. Customer Analysis
-
-Analyzes:
-
-- Customer Sales
-- Customer Orders
-- Customer Quantity
-- Top Customers
-- Customer-level performance
-
-### 6. Time & Sales Trend
-
-Analyzes:
-
-- Monthly Sales Trend
-- Yearly Sales
-- Monthly Orders
-- Sales by Month
-- Monthly Sales Growth
+The Date Table is connected to the Orders table through the `OrderDate` field.
 
 ---
 
-## 📈 Key KPIs
+# 🏗️ Data Model
 
-The dashboard includes interactive KPI measures such as:
-
-- Total Sales
-- Total Orders
-- Total Customers
-- Total Quantity
-- Average Order Value
-- Sales Growth
-- Salesperson Sales %
-
----
-
-## 🔄 Interactivity
-
-The Power BI dashboard includes interactive slicers for:
-
-- Product
-- Category
-- Salesperson
-- Customer
-- Date/Month
-
-Users can select different values to dynamically analyze sales performance.
-
----
-
-## 🔗 Data Model
-
-The Power BI model follows a relational structure connecting:
+The Power BI data model consists of:
 
 ```text
 Customers
-     │
-     │
-     ▼
-   Orders ◄──── Products ◄──── Categories
-     │
-     │
-     ▼
+    │
+    │ CustomerID
+    ▼
+ Orders ◄──────── Date Table
+    │                 │
+    │                 │ Date
+    │
+    ├──────────────► Products
+    │                    │
+    │                    │ CategoryID
+    │                    ▼
+    │                Categories
+    │
+    │ SalespersonID
+    ▼
 Salespersons
-
-DateTable ─────► Orders
