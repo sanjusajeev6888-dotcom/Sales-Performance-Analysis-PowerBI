@@ -239,23 +239,41 @@ DAX measures were created in Power BI to calculate the main business KPIs and su
 ```DAX
 Total Sales =
 SUM(Orders[SalesAmount])
+```
 
+### Total Orders
+
+```DAX
 Total Orders =
 DISTINCTCOUNT(Orders[OrderID])
+```
 
+### Total Quantity
+
+```DAX
 Total Quantity =
 SUM(Orders[Quantity])
+```
 
+### Total Customers
+
+```DAX
 Total Customers =
 DISTINCTCOUNT(Orders[CustomerID])
+```
 
+### Average Order Value
+
+```DAX
 Average Order Value =
 DIVIDE(
     [Total Sales],
     [Total Orders],
     0
 )
+```
 
+These measures were used to create KPI cards and support the dashboard's sales, customer, order, quantity, and average order value analysis.
 # 📊 KPI Cards
 
 KPI cards were created in Power BI to provide a quick overview of the main sales performance indicators.
@@ -491,7 +509,7 @@ These KPIs provide a high-level view of overall business performance.
 
 **Skipping Rope** was identified as the highest-selling product, generating approximately **568,866.59** in sales.
 
-**Dumbbell Set** was among the lowest-performing products, generating approximately **25,977.04** in sales.
+**Dumbbell Set** was the lowest-selling product, generating approximately 25,977.04 in sales.
 
 This indicates a significant difference in sales contribution between products.
 
@@ -623,26 +641,24 @@ Used to organize and present the project files and documentation.
 The project repository is organized as follows:
 
 ```text
-Sales-Performance-Analysis
+Sales-Performance-Analysis-PowerBI/
 │
-├── Dataset
-│   └── Sales_Analysis_Dataset.xlsx
+├── README.md
 │
-├── PowerBI
-│   └── Sales_Performance_Analysis.pbix
-│
-├── Screenshots
-│   ├── Executive_Sales_Overview.png
-│   ├── Product_Analysis.png
-│   ├── Category_Analysis.png
-│   ├── Salesperson_Analysis.png
-│   ├── Customer_Analysis.png
-│   └── Time_Sales_Trend.png
-│
-└── README.md
+└── Power BI Project/
+    │
+    ├── Sales_Performance_Analysis.pbix
+    │
+    └── Screenshots/
+        ├── Screenshot 2026-08-25 184543.png
+        ├── Screenshot 2026-08-25 184610.png
+        ├── Screenshot 2026-08-25 184629.png
+        ├── Screenshot 2026-08-25 184648.png
+        ├── Screenshot 2026-08-25 184704.png
+        └── Screenshot 2026-08-25 184727.png
 ```
 
-The structure separates the dataset, Power BI report, screenshots, SQL analysis, and project documentation.
+The repository contains the Power BI report, dashboard screenshots, and project documentation.
 
 ---
 
@@ -652,32 +668,27 @@ The project includes screenshots of the completed Power BI dashboard pages.
 
 ### Executive Sales Overview
 
-![Executive Sales Overview](Screenshots/Screenshot 2026-08-25 184543.png)
+![Executive Sales Overview](Power%20BI%20Project/Screenshots/Screenshot%202026-08-25%20184543.png)
 
 ### Product Analysis
 
-![Product Analysis](Screenshots/Screenshot 2026-08-25 184610.png)
+![Product Analysis](Power%20BI%20Project/Screenshots/Screenshot%202026-08-25%20184610.png)
 
 ### Category Analysis
 
-![Category Analysis](Screenshots/Screenshot 2026-08-25 184629.png)
+![Category Analysis](Power%20BI%20Project/Screenshots/Screenshot%202026-08-25%20184629.png)
 
 ### Salesperson Analysis
 
-![Salesperson Analysis](Screenshots/Screenshot 2026-08-25 184648.png)
+![Salesperson Analysis](Power%20BI%20Project/Screenshots/Screenshot%202026-08-25%20184648.png)
 
 ### Customer Analysis
 
-![Customer Analysis](Screenshots/Screenshot 2026-08-25 184704.png)
+![Customer Analysis](Power%20BI%20Project/Screenshots/Screenshot%202026-08-25%20184704.png)
 
 ### Time & Sales Trend
 
-![Time & Sales Trend](Screenshots/Screenshot 2026-08-25 184727.png)
-
-> The screenshot files should be added to the `Screenshots` folder before publishing the README on GitHub.
-
----
-
+![Time & Sales Trend](Power%20BI%20Project/Screenshots/Screenshot%202026-08-25%20184727.png)
 # 📖 15. How to Use
 
 ### Step 1 — Open the Power BI Report
